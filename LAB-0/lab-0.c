@@ -10,7 +10,6 @@ void linear(int arr[],int n,int element)
         } 
     }
     printf("Element not found\n");
-   // return;
 }
 
 void binary(int arr[],int first,int middle,int last,int n,int element)
@@ -52,13 +51,7 @@ void binary(int arr[],int first,int middle,int last,int n,int element)
 int main()
 {
     int first,last,middle,arr[100],choice,n,element;
-    while(1)
-    {
-    printf("Enter the choice you want to perform\n1.Linear Search\n2.Binary Search\n3.Exit\n");
-    scanf("%d",&choice);
-    if(choice==3)
-        exit(0);
-    printf("Enter the number of elements\n");
+    printf("Enter the number of elements in the array\n");
     scanf("%d",&n);
     for(int i=0;i<n;i++)
     {
@@ -69,16 +62,20 @@ int main()
         printf("%d ",arr[i]);
     printf("\nEnter the element you want to search for\n");
     scanf("%d",&element);
+    while(1)
+    {
+    printf("Enter the choice you want to perform\n1.Linear Search\n2.Binary Search\n3.Exit\n");
+    scanf("%d",&choice);
     switch(choice)
        {
-        case 1:linear(arr,n,element);
+        case 1: linear(arr,n,element);
                 break;
         case 2:{
             first=0; last=n-1; middle=(first+last)/2;
             binary(arr,first,middle,last,n,element);
         }
         break;
-        //case 3:exit(0);
+        case 3:exit(0);
         default:printf("Incorrect choice....Please enter the correct choice\n");
     }
     }
