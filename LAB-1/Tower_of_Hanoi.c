@@ -3,7 +3,7 @@ void tower(int ,char,char,char);
 int main()
 {
 	int num;
-    printf("Enter the number of discs:\n");
+    printf("Enter the number of disks:\n");
     scanf("%d",&num);
     printf("The sequence of moves involved in the tower of Hanoi are:\n");
     tower(num,'A','C','B');
